@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+      {% csrf_token %}
+        <input type="text" name="avg_temp">
+        <input type="text" name="min_temp">
+        <input type="text" name="max_temp">
+        <input type="text" name="rain_fall">
+        <!-- <input type="file" name="images"> -->
+        <input type="submit">
+    </form>
+
+    {% if price %}
+
+    <h5 class="text-center mt-3">결과: {{ price }}</h5>
+
+  {% endif %}
+
+
+</body>
+</html>

@@ -4,5 +4,5 @@
 <ol>2. pip install django</ol>
 <ol>3. pip install pillow</ol>
 <ol>4. pip install rest_framework</ol>
-<ol>5. cd index(index 폴더 안에 manage.py가 있어야됨<ol>
+<ol>5. cd index(index 폴더 안에 manage.py가 있어야됨</ol>
 <ol>6. python manage.py runserver</ol>

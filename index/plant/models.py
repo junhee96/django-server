@@ -7,5 +7,12 @@ class Plantimage(models.Model):
     max_temp = models.FloatField(blank="null")
     rain_fall = models.FloatField(blank="null")
     
+    
 class Test(models.Model):
-    images = models.ImageField(upload_to="",blank="null")
+    images = models.FileField(upload_to="",blank="null")
+    device = models.TextField(blank="null")
+    date = models.TextField(blank="null")
+
+class Plantsub(models.Model):
+    plant = models.ForeignKey(Plantimage,on_delete=models.CASCADE)
+    price = models.TextField(blank="null")

@@ -45,8 +45,8 @@ model.load_weights("/home/jongminjo/Downloads/flower_weight.h5")
 
 # Create your views here.
 class VersionViewSet(viewsets.ModelViewSet):
-    queryset = Plantsub.objects.all().order_by('-plant')
-    serializer_class = PlantsubSerializer
+    queryset = Test.objects.all()
+    serializer_class = TestSerializer
 
     # def get_queryset(self):
     #     qs = super().get_queryset()
@@ -56,10 +56,11 @@ class VersionViewSet(viewsets.ModelViewSet):
 #     queryset = Test.objects.all()
 #     serializer_class = TestSerializer
 @csrf_exempt
-def plant_result(request):
+def plant_result(request,device,date):
     if request.method == "GET":
-        query_set = Plantsub.objects.all()
-        serializers = PlantsubSerializer(query_set, many=True)
+        # test = get_object_or_404(Test,)
+        query_set = Test.objects.filter(device=device) & Test.objects.filter(date=date)
+        serializers = TestSerializer(query_set, many=True)
         return JsonResponse(serializers.data, safe=False)
 
 
@@ -98,7 +99,7 @@ def index(request):
         img_resized = cv2.resize(img_bart,(32,32))
         io.imshow(img_resized)
         dict = y_pred = model.predict(np.expand_dims(img_resized, axis=0))
-        print("####################################섹스섹스고추###################",dict)
+        print("####################################야야야야야야###################",dict)
         #a = y_pred[0]
         #a = a.sort(reverse=True)
 

@@ -10,4 +10,5 @@ urlpatterns = [
     path('main/',views.main,name="main"),
     path('test/',views.index,name="index"),
     path('result/<str:device>/<str:date>/',views.plant_result),
+    path('plantcon/<str:name>/',views.plant_con),
 ]

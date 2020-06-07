@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Plantimage)
 admin.site.register(Plantsub)
 admin.site.register(Test)
+admin.site.register(Plantconnect)

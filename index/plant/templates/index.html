@@ -8,21 +8,12 @@
 <body>
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-        <!-- <input type="text" name="avg_temp">
-        <input type="text" name="min_temp">
-        <input type="text" name="max_temp">
-        <input type="text" name="rain_fall"> -->
         <input type="file" name="images">
         <input type="text" name="device">
         <input type="text" name="date">
         <input type="submit">
     </form>
 
-    {% if price %}
-
-    <h5 class="text-center mt-3">결과: {{ price }}</h5>
-
-  {% endif %}
 
 
 </body>

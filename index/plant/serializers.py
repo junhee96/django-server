@@ -2,24 +2,18 @@ from rest_framework import serializers
 
 from .models import *
 
-class PlantimageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Plantimage
-        fields = '__all__'
-
-class PlantsubSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Plantsub
-        fields = '__all__'
 
 class PlantconnectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plantconnect
         fields = '__all__'
 
-class TestSerializer(serializers.ModelSerializer):
-    # plantconnect = serializers.StringRelatedField(many=True,read_only=True)
-    # plantconnect = PlantconnectSerializer(many=True, read_only=True)
+class MyCameraSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Test
+        model = MyCamera
+        fields = '__all__'
+
+class PlantaddSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Plantadd
         fields = '__all__'

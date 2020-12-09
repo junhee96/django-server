@@ -21,15 +21,6 @@ import datetime
 import tensorflow as tf
 import numpy as np
 
-#대충 전처리 하는 코드
-model = tf.keras.applications.MobileNet(
-    input_shape=(32,32,3), alpha=1.0, depth_multiplier=1, dropout=0.001,
-    include_top=True, weights=None, input_tensor=None, pooling=None,
-    classes=3, classifier_activation='softmax'
-)
-model.load_weights("/home/jongminjo/Downloads/flower_weight.h5")
-
-
 # Create your views here.
 @csrf_exempt
 def plant_con(request,name):
@@ -47,6 +38,13 @@ def plant_result(request,device,date):
 
 @csrf_exempt
 def index(request):
+    model = tf.keras.applications.MobileNet(
+        input_shape=(32,32,3), alpha=1.0, depth_multiplier=1, dropout=0.001,
+        include_top=True, weights=None, input_tensor=None, pooling=None,
+        classes=3, classifier_activation='softmax'
+    )
+    model.load_weights("/home/jongminjo/Downloads/flower_weight.h5")
+
     if request.method == "POST":
         mycamera = MyCamera()
         mycamera.images = request.FILES["images"]
